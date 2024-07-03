@@ -1,8 +1,9 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Times New Roman', Times, serif
+ ;
+    background: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,13 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
   }
-  body {
-    background: white;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-      "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-      sans-serif;
-  }
-  
+
   form {
     max-width: 500px;
     margin: 0 auto;
@@ -131,7 +126,7 @@ code {
   }
   
   .App {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
   }
   
@@ -177,4 +172,51 @@ code {
   span {
     color: red;
     font-size: 12px;
+  }
+  /* EmployeeList */
+  .employee-list {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .employee-list h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .employee-list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .employee-list table, .employee-list th, .employee-list td {
+    width: 890px;
+  }
+  
+  .employee-list th, .employee-list td {
+    padding: 8px;
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    width: 90px;
+  }
+  
+  .employee-list .FirstName {
+    background-color: #ddd;
+  }
+  
+  .employee-list td {
+    background-color: #f1f1f1;
+  }
+  .back-link a:hover {
+    text-decoration: underline;
+  }
+  .back-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .back-link {
+    margin-bottom: 20px;
+    text-align: center;
   }
