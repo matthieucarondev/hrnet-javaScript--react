@@ -255,3 +255,23 @@ code {
   .employee-list .pagination button:hover {
     background-color: #ddd;
   }
+  .employee-list th {
+    cursor: pointer;
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-right: 20px; /* Pour laisser de la place pour l'image de tri */
+  }
+  
+  .employee-list th.sortable {
+    background-image: url(./images/sort-icon.png);
+  }
+  
+  .employee-list th.sortable.asc {
+    background-image: url(./images/sort-asc.png);
+    background-size:  10px 10px ;
+  }
+  
+  .employee-list th.sortable.desc {
+    background-image: url(./images/sort-desc.png);
+    background-size:10px 10px  ;
+  }

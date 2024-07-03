@@ -6,6 +6,7 @@ const EmployeeList = () => {
   const [employeesPerPage, setEmployeesPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState(""); 
+  const [sortConfig, setSortConfig] = useState({ key: 'startDate', direction: 'ascending' });
    
    useEffect(() => {
 
@@ -18,18 +19,30 @@ const EmployeeList = () => {
     };
     fetchEmployees();
    }, []);
-
+//recherche 
    const filteredEmployees = employees.filter(employee =>
     employee.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     employee.lastName.toLowerCase().includes(searchTerm.toLowerCase())
   );
+//fonction de tri des employés
+const sortedEmployees = [...filteredEmployees].sort((a, b) =>{
+  if (!sortConfig.key) return 0;
+  if (a[sortConfig.key]<b[sortConfig.key]){
+    return sortConfig.direction ==='ascending' ? -1 : 1;
+  }
+  if (a[sortConfig.key] > b[sortConfig.key]){
+    return sortConfig.direction ==='ascending' ? 1 : -1;
+  }
+    return 0;
+});
+
    //nombre de pages total
-   const totalPages = Math.ceil(filteredEmployees.length/employeesPerPage);
+   const totalPages = Math.ceil( sortedEmployees.length/employeesPerPage);
 
    // obtenir  les employés pour la page courantz
    const indexOfLastEmployee = currentPage* employeesPerPage;
    const indecOfFirstEmployee = indexOfLastEmployee -employeesPerPage;
-   const currentEmployees = filteredEmployees.slice(indecOfFirstEmployee ,indexOfLastEmployee);
+   const currentEmployees =  sortedEmployees.slice(indecOfFirstEmployee ,indexOfLastEmployee);
 
    // gestion  des  changement de page
 
@@ -49,6 +62,25 @@ const EmployeeList = () => {
     setSearchTerm(event.target.value);
     setCurrentPage(1); // Revenir à la première page lorsque le terme de recherche change
   };
+
+  const handleSort = (key) => {
+      let direction = 'ascending';
+      if(sortConfig.key === key&& sortConfig.direction === 'ascending'){
+        direction = 'descending';
+      } else if (sortConfig.key === key && sortConfig.direction === 'descending') {
+        direction = null; 
+        key = null;
+      }
+      setSortConfig({ key, direction });
+    };
+
+    const getSortClass = (key) => {
+      if (sortConfig.key === key) {
+        return sortConfig.direction === 'ascending' ? 'sortable asc' :
+               sortConfig.direction === 'descending' ? 'sortable desc' : 'sortable';
+      }
+      return 'sortable';
+    };
 
    return (
     <div className="employee-list">
@@ -74,21 +106,22 @@ const EmployeeList = () => {
           <option value={10}>10</option>
           <option value={15}>15</option>
           <option value={20}>20</option>
-        </select>entries</label>
+        </select>
+        entries</label>
       </div>
         <table>
           <thead>
             <tr>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Start Date</th>
-              <th>Department</th>
-              <th>Date of Birth</th>
-              <th>Street</th>
-              <th>City</th>
-              <th>State</th>             
-              <th>Zip Code</th>
-            </tr>
+            <th onClick={() => handleSort('firstName')} className={getSortClass('firstName')}>First Name</th>
+            <th onClick={() => handleSort('lastName')} className={getSortClass('lastName')}>Last Name</th>
+            <th onClick={() => handleSort('startDate')} className={getSortClass('startDate')}>Start Date</th>
+            <th onClick={() => handleSort('department')} className={getSortClass('department')}>Department</th>
+            <th onClick={() => handleSort('dateOfBirth')} className={getSortClass('dateOfBirth')}>Date of Birth</th>
+            <th onClick={() => handleSort('street')} className={getSortClass('street')}>Street</th>
+            <th onClick={() => handleSort('city')} className={getSortClass('city')}>City</th>
+            <th onClick={() => handleSort('state')} className={getSortClass('state')}>State</th>
+            <th onClick={() => handleSort('zipCode')} className={getSortClass('zipCode')}>Zip Code</th>
+          </tr>
           </thead>
           <tbody>
             {currentEmployees.map((employee, index) => (
