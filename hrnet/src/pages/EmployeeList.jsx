@@ -5,6 +5,7 @@ const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
   const [employeesPerPage, setEmployeesPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState(""); 
    
    useEffect(() => {
 
@@ -18,13 +19,17 @@ const EmployeeList = () => {
     fetchEmployees();
    }, []);
 
+   const filteredEmployees = employees.filter(employee =>
+    employee.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    employee.lastName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
    //nombre de pages total
-   const totalPages = Math.ceil(employees.length/employeesPerPage);
+   const totalPages = Math.ceil(filteredEmployees.length/employeesPerPage);
 
    // obtenir  les employés pour la page courantz
    const indexOfLastEmployee = currentPage* employeesPerPage;
    const indecOfFirstEmployee = indexOfLastEmployee -employeesPerPage;
-   const currentEmployees = employees.slice(indecOfFirstEmployee ,indexOfLastEmployee);
+   const currentEmployees = filteredEmployees.slice(indecOfFirstEmployee ,indexOfLastEmployee);
 
    // gestion  des  changement de page
 
@@ -40,9 +45,24 @@ const EmployeeList = () => {
     setCurrentPage(1);//revenir a la premiére page des  que le nombre d'employer change
    };
 
+   const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+    setCurrentPage(1); // Revenir à la première page lorsque le terme de recherche change
+  };
+
    return (
     <div className="employee-list">
       <h2>Current Employees</h2>
+      <div className="search-bar">
+        <label htmlFor="search">Search:</label>
+        <input
+          id="search"
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          placeholder="Search by first name or last name"
+        />
+      </div>
       <div className="options">
       <label htmlFor="employeesPerPage">show
         <select
@@ -87,15 +107,29 @@ const EmployeeList = () => {
           </tbody>
         </table>
         <div className="pagination">
+        <button
+          onClick={(event) => handlePageChange(event, currentPage - 1)}
+          disabled={currentPage === 1}
+          className="pagination-button"
+        >
+          Previous
+        </button>
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index + 1}
             onClick={(event) => handlePageChange(event, index + 1)}
-            className={currentPage === index + 1 ? 'active' : ''}
+            className={currentPage === index + 1 ? 'active' : 'pagination-button'}
           >
             {index + 1}
           </button>
         ))}
+        <button
+          onClick={(event) => handlePageChange(event, currentPage + 1)}
+          disabled={currentPage === totalPages}
+          className="pagination-button"
+        >
+          Next
+        </button>
         <div className="back-link">
         <Link to="/">Back to Form</Link>
       </div>
