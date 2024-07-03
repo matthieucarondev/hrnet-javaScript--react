@@ -220,3 +220,38 @@ code {
     margin-bottom: 20px;
     text-align: center;
   }
+  .employee-list .options {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .employee-list .options label {
+    margin-right: 10px;
+  }
+  
+  .employee-list .options select {
+    padding: 5px;
+  }
+  
+  .employee-list .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .employee-list .pagination button {
+    margin: 0 2px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  .employee-list .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .employee-list .pagination button:hover {
+    background-color: #ddd;
+  }
