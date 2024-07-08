@@ -4,16 +4,18 @@ import FormInput from "../components/FormImput.jsx";
 import FormSelect from "../components/FormSelect.jsx";
 import FormAddress from "../components/FormAddress.jsx";
 import { departments} from "../data/data";
-
+import ReactModal  from "react-modal-mc";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function Form() {
-  const { register, handleSubmit,  formState: { errors } } = useForm();
+  const { register, handleSubmit,  formState: { errors } ,reset } = useForm();
 const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   const [selectedState, setSelectedState] = React.useState(null);
   const [formErrors, setFormErrors] = useState({ state: false, department: false });
-
+  const [modalIsOpen, setModalIsOpen] = useState(false); // État pour contrôler l'affichage du modal
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     if (!selectedState || !selectedDepartment) {
@@ -32,58 +34,22 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
       console.warn('existingData est un objet, transformation en tableau.');
       existingData = Object.values(existingData); // Convertit en tableau des valeurs de l'objet
     }
-
-
-    // Vérification si un employé a déjà été enregistré avec au moins une information identique
-    const matchingEmployee = existingData.find(item =>
-      item.city === data.city ||
-      item.dateOfBirth === data.dateOfBirth ||
-      item.department === data.department ||
-      item.firstName === data.firstName ||
-      item.lastName === data.lastName ||
-      item.startDate === data.startDate ||
-      item.state === data.state ||
-      item.street === data.street ||
-      item.zipCode === data.zipCode
-    );
-
-    if (matchingEmployee) {
-      const isConfirm = window.confirm(`An employee with some matching details already exists. Do you want to update the existing information?`);
-
-      if (isConfirm) {
-        // Cherche l'employé existant avec les informations exactes pour mise à jour
-        const existingEmployeeIndex = existingData.findIndex(item =>
-          item.firstName === data.firstName &&
-          item.lastName === data.lastName &&
-          item.dateOfBirth === data.dateOfBirth
-        );
-
-        if (existingEmployeeIndex !== -1) {
-          const existingEmployee = existingData[existingEmployeeIndex];
-          const updatedEmployee = { ...existingEmployee, ...data };
-
-          existingData[existingEmployeeIndex] = updatedEmployee;
-          localStorage.setItem("employeeData", JSON.stringify(existingData));
-          alert("Employee information updated.");
-        } else {
-          // Ajouter un nouvel employé s'il n'existe pas avec les mêmes informations exactes
-          existingData.push(data);
-          localStorage.setItem("employeeData", JSON.stringify(existingData));
-          alert("Employee registered.");
-        }
-      } else {
-        // Ne rien faire si l'utilisateur refuse de mettre à jour
-        alert("Employee information was not updated.");
-      }
-    } else {
-      // Ajouter un nouvel employé s'il n'y a pas de doublon
+      
+      // Ajouter un nouvel employé 
       existingData.push(data);
       localStorage.setItem("employeeData", JSON.stringify(existingData));
-      alert("Employee registered.");
-    }
+      setModalIsOpen(true); // Ouvre le modal lorsque l'employé est ajouté avec succès
     console.log(data);
   };
-
+  // Fonction pour fermer le modal
+  const close = () => {
+    setModalIsOpen(false); // Ferme le modal
+    reset();
+    setSelectedDepartment(null); 
+    setSelectedState(null);
+    setFormErrors({state: false, department: false});
+    navigate('/employee-list');
+  };
   return (
     <div>
       <div className="title">
@@ -145,6 +111,14 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
           </div>
         </form>
       </div>
+ 
+<ReactModal 
+      isOpen={modalIsOpen}
+      onClose={() => close()}
+       message="Employee Created!"
+        title="Employee Created!"
+      >
+      </ReactModal>
     </div>
   );
 }
