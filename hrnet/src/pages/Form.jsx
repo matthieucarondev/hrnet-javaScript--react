@@ -6,7 +6,8 @@ import FormAddress from "../components/FormAddress.jsx";
 import { departments} from "../data/data";
 import ReactModal  from "react-modal-mc";
 import { useNavigate } from "react-router-dom";
-
+import { useDispatch } from "react-redux";
+import { addEmployee } from "../redux/employeesSlice.js";
 
 
 export default function Form() {
@@ -16,6 +17,8 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   const [formErrors, setFormErrors] = useState({ state: false, department: false });
   const [modalIsOpen, setModalIsOpen] = useState(false); // État pour contrôler l'affichage du modal
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
 
   const onSubmit = (data) => {
     if (!selectedState || !selectedDepartment) {
@@ -29,17 +32,8 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
     data.state = selectedState.value;
     data.department = selectedDepartment.value;
 
-    let existingData = JSON.parse(localStorage.getItem("employeeData")) || [];
-    if (!Array.isArray(existingData)) {
-      console.warn('existingData est un objet, transformation en tableau.');
-      existingData = Object.values(existingData); // Convertit en tableau des valeurs de l'objet
-    }
-      
-      // Ajouter un nouvel employé 
-      existingData.push(data);
-      localStorage.setItem("employeeData", JSON.stringify(existingData));
-      setModalIsOpen(true); // Ouvre le modal lorsque l'employé est ajouté avec succès
-    console.log(data);
+    dispatch(addEmployee(data));
+    setModalIsOpen(true);
   };
   // Fonction pour fermer le modal
   const close = () => {

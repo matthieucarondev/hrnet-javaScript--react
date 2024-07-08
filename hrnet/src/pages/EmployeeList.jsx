@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { setEmployees } from '../redux/employeesSlice.js';
 
 const EmployeeList = () => {
-  const [employees, setEmployees] = useState([]);
+  const employees = useSelector((state) => state.employees.employees);
+  const dispatch = useDispatch();
   const [employeesPerPage, setEmployeesPerPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState(""); 
@@ -12,13 +15,10 @@ const EmployeeList = () => {
 
     const fetchEmployees= () => {
         let storedData= JSON.parse(localStorage.getItem('employeeData')) ;
-        if (!Array.isArray(storedData)){
-            storedData=Object.values(storedData);
-        }
-        setEmployees(storedData);
+       dispatch(setEmployees(storedData)) ;
     };
     fetchEmployees();
-   }, []);
+   }, [dispatch]);
 //recherche 
    const filteredEmployees = employees.filter(employee =>
     employee.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
