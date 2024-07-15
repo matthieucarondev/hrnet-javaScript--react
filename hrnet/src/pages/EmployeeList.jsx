@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import logo from "../images/hrnet-logo.jpeg";
-import { Link } from "react-router-dom";
+
 
 const EmployeeList = () => {
   const employees = useSelector((state) => state.employees.employees);
@@ -87,14 +86,6 @@ const EmployeeList = () => {
 
   return (
     <div>
-        <div className="container">
-      <img src={logo} alt="logo" />
-      <div className="title">
-        <h1>HRnet</h1>
-        </div>
-      <Link className="Link patch" to="/">View Create Employee</Link>
-        </div>
-    
       <div className="employee-list"> 
          <h2>Current Employees</h2>
         <div>

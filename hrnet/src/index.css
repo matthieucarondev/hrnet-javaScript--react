@@ -137,13 +137,6 @@ input:disabled {
 input[type="button"]:hover {
   transition: 0.3s all;
 }
-
-button[type="submit"],
-input[type="button"],
-input[type="submit"] {
-  -webkit-appearance: none;
-}
-
 .App {
   max-width: 100%;
   margin: 0 auto;
@@ -244,7 +237,7 @@ span {
   h2 {
     margin-bottom: 20px;
     text-align: center;
-    
+
   }
 
   table {
