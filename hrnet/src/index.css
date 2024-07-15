@@ -16,8 +16,7 @@ body {
   justify-content: space-around;
 }
 
-h1,
-h2 {
+h1 {
   font-weight: 100;
   color: #73852B;
   font-weight: 900;
@@ -245,6 +244,7 @@ span {
   h2 {
     margin-bottom: 20px;
     text-align: center;
+    
   }
 
   table {

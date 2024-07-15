@@ -87,16 +87,16 @@ const EmployeeList = () => {
 
   return (
     <div>
-      <div className="container">
-        <img src={logo} alt="logo" />
-        <h2>Current Employees</h2>
-        <div>
-          <Link className="Link patch" to="/">
-            Back to Form
-          </Link>
+        <div className="container">
+      <img src={logo} alt="logo" />
+      <div className="title">
+        <h1>HRnet</h1>
         </div>
-      </div>
-      <div className="employee-list">
+      <Link className="Link patch" to="/">View Create Employee</Link>
+        </div>
+    
+      <div className="employee-list"> 
+         <h2>Current Employees</h2>
         <div>
           {employees.length > 5 ?(
           <div className="fonction">
