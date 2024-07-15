@@ -109,8 +109,10 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
 <ReactModal 
       isOpen={modalIsOpen}
       onClose={() => close()}
-       message="Employee Created!"
-        title="Employee Created!"
+      message="Employee Created!"
+      title="Employee Created!"
+      modalBackground="white"
+      closeButtonBackground="#5E6E21"
       >
       </ReactModal>
     </div>
