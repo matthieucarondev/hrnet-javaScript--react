@@ -10,15 +10,13 @@ const employeesSlice = createSlice({
     addEmployee(state, action) {
       state.employees.push(action.payload);
     },
-    // Action pour définir des employés (par exemple pour le chargement initial)
-    setEmployees(state, action) {
-      state.employees = action.payload;
-    },
+    
+   
   },
 });
 
 // Exportez les actions
-export const { addEmployee, setEmployees } = employeesSlice.actions;
+export const { addEmployee } = employeesSlice.actions;
 
 // Exportez le réducteur par défaut
 export default employeesSlice.reducer;

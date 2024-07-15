@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import employeesReducer from './employeesSlice.js';
+import employeesReducer from '../reducer/employeesReducer.js';
 
 // Combinez vos slices ici si vous en avez plusieurs
 const rootReducer = combineReducers({

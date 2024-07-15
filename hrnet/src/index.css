@@ -1,277 +1,318 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue','Times New Roman', Times, serif
- ;
-    background: white;
+  font-family: "Lora", serif;
+  ;
+  background: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+  color: #73852B;
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: 10px;
+  width: 350px;
+  margin-left: 50px;
+
+}
+
+.Link {
+  text-decoration: none;
+  color: #0e101c;
+}
+
+.patch {
+  background-color: #73852B;
+  width: 250px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #4a5323;
+  border-radius: 50px;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+p {
+  color: #bf1650;
+}
+
+p::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+input,
+select {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #0e101c;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.address {
+  border: 3px solid #859b2d;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.title-address {
+  width: 60px;
+  background-color: white;
+  position: relative;
+  bottom: 35px;
+  padding: 5px;
+}
+
+label {
+  line-height: 2;
+  text-align: left;
+  display: block;
+  margin-bottom: 13px;
+  margin-top: 20px;
+  color: black;
+  font-size: 14px;
+  font-weight: 200;
+}
+
+button[type="submit"],
+input[type="submit"] {
+  background: #86963f;
+  color: white;
+  text-transform: uppercase;
+  border: 3px solid #a4c130;
+  margin-top: 40px;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  letter-spacing: 10px;
+  border-radius: 30px;
+
+}
+
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: #5E6E21;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button[type="submit"]:active,
+input[type="button"]:active,
+input[type="submit"]:active {
+  transition: 0.3s all;
+  transform: translateY(3px);
+  border: 1px solid transparent;
+  opacity: 0.8;
+}
+
+input:disabled {
+  opacity: 0.4;
+}
+
+input[type="button"]:hover {
+  transition: 0.3s all;
+}
+
+button[type="submit"],
+input[type="button"],
+input[type="submit"] {
+  -webkit-appearance: none;
+}
+
+.App {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+button[type="button"] {
+  display: block;
+  appearance: none;
+  background: #333;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+hr {
+  margin-top: 30px;
+}
+
+button {
+  display: block;
+  appearance: none;
+  margin-top: 40px;
+  border: 1px solid #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+.react-select__control {
+  margin: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 0 0 1px #d1d5db;
+}
+
+.react-select__menu {
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.react-select__option--is-selected {
+  background-color: #f0f0f0;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+}
+
+/* EmployeeList */
+
+
+.fonction {
+  display: flex;
+  justify-content: space-between;
+
+  .options label {
+    display: flex;
+    align-items: baseline;
+
+    select {
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: #bfdf3e;
+      border-radius: 30px;
+      height: 40px;
+    }
+  }
+}
+
+.fonctionSearch {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.search-bar {
+  display: flex;
+  align-items: baseline;
+
+  label {
+    margin-right: 20px;
   }
 
-  form {
-    max-width: 500px;
-    margin: 0 auto;
+  input {
+    height: 40px;
+    background-color: #bfdf3e;
+    border-radius: 30px;
   }
-  
-  h1 {
-    font-weight: 100;
-    color: #0e101c;
+}
+
+.employee-list {
+  padding: 20px;
+  max-width: 1187px;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 20px;
     text-align: center;
-    padding-bottom: 10px;
-    
   }
-  .container{
+
+  table {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .form {
-    background: #0e101c;
-    max-width: 400px;
-    margin: 0 auto;
-    color: white;
-  }
-  
-  p {
-    color: #bf1650;
-  }
-  
-  p::before {
-    display: inline;
-    content: "⚠ ";
-  }
-  
-  input,
-  select {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    border-radius: 4px;
-    border: 1px solid #0e101c;
-    padding: 10px 15px;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  .address {
-    border: 1px solid #0e101c;
-    padding: 15px;
-    margin-top: 20px;
-  }
-  .title-address {
-    width: 60px;
-    background-color: white;
-    position: relative;
-    bottom: 35px;
-    padding: 5px;
-  }
-  label {
-    line-height: 2;
-    text-align: left;
-    display: block;
-    margin-bottom: 13px;
-    margin-top: 20px;
-    color: black;
-    font-size: 14px;
-    font-weight: 200;
-  }
-  
-  button[type="submit"],
-  input[type="submit"] {
-    background: #59ece0;
-    color: white;
-    text-transform: uppercase;
-    border: none;
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 16px;
-    font-weight: 100;
-    letter-spacing: 10px;
-  }
-  
-  button[type="submit"]:hover,
-  input[type="submit"]:hover {
-    background: #0116b3;
-  }
-  .button-container {
-    display: flex;
     justify-content: center;
-    margin-top: 20px;
-  }
-  button[type="submit"]:active,
-  input[type="button"]:active,
-  input[type="submit"]:active {
-    transition: 0.3s all;
-    transform: translateY(3px);
-    border: 1px solid transparent;
-    opacity: 0.8;
-  }
-  
-  input:disabled {
-    opacity: 0.4;
-  }
-  
-  input[type="button"]:hover {
-    transition: 0.3s all;
-  }
-  
-  button[type="submit"],
-  input[type="button"],
-  input[type="submit"] {
-    -webkit-appearance: none;
-  }
-  
-  .App {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  
-  button[type="button"] {
-    display: block;
-    appearance: none;
-    background: #333;
-    color: white;
-    border: none;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  
-  hr {
-    margin-top: 30px;
-  }
-  
-  button {
-    display: block;
-    appearance: none;
-    margin-top: 40px;
-    border: 1px solid #333;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    padding: 10px 20px;
-    border-radius: 4px;
-  }
-  .react-select__control {
-    margin: 10px 0;
-    border-radius: 5px;
-    box-shadow: 0 0 0 1px #d1d5db;
-  }
-  
-  .react-select__menu {
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .react-select__option--is-selected {
-    background-color: #f0f0f0;
-  }  
-  span {
-    color: red;
-    font-size: 12px;
-  }
-  /* EmployeeList */
-  .employee-list {
-    padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .employee-list h2 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .employee-list table {
-    width: 100%;
+    min-width: 100%;
     border-collapse: collapse;
   }
-  
-  .employee-list table, .employee-list th, .employee-list td {
-    width: 890px;
-  }
-  
-  .employee-list th, .employee-list td {
-    padding: 8px;
-    text-align: left;
-    font-family: 'Times New Roman', Times, serif;
-    width: 90px;
-  }
-  
-  .employee-list .FirstName {
-    background-color: #ddd;
-  }
-  
-  .employee-list td {
+
+  td {
+
+    text-align: center;
+    min-width: 110px;
     background-color: #f1f1f1;
+    padding-right: 20px;
   }
-  .back-link a:hover {
-    text-decoration: underline;
-  }
-  .back-link a {
-    color: #007bff;
-    text-decoration: none;
-    font-size: 16px;
-  }
-  .back-link {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .employee-list .options {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .employee-list .options label {
-    margin-right: 10px;
-  }
-  
-  .employee-list .options select {
-    padding: 5px;
-  }
-  
-  .employee-list .pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .employee-list .pagination button {
-    margin: 0 2px;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    cursor: pointer;
-  }
-  
-  .employee-list .pagination button.active {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  .employee-list .pagination button:hover {
-    background-color: #ddd;
-  }
-  .employee-list th {
+
+  th {
     cursor: pointer;
     background-position: right;
     background-repeat: no-repeat;
-    padding-right: 20px; /* Pour laisser de la place pour l'image de tri */
+    padding-right: 20px;
+    text-align: center;
+    min-width: 110px;
   }
-  
-  .employee-list th.sortable {
+
+  th.sortable {
     background-image: url(./images/sort-icon.png);
   }
-  
-  .employee-list th.sortable.asc {
+
+  th.sortable.asc {
     background-image: url(./images/sort-asc.png);
-    background-size:  10px 10px ;
+    background-size: 10px 10px;
   }
-  
-  .employee-list th.sortable.desc {
+
+  th.sortable.desc {
     background-image: url(./images/sort-desc.png);
-    background-size:10px 10px  ;
+    background-size: 10px 10px;
   }
+
+
+  .FirstName {
+    background-color: #ddd;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      margin: 0 2px;
+      padding: 5px 10px;
+      height: 40px;
+      background-color: #bfdf3e;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    button.active {
+      background-color: #5E6E21;
+      color: #fff;
+    }
+
+    button:hover {
+      background-color: #5E6E21;
+    }
+  }
+}
+

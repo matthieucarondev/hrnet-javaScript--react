@@ -5,10 +5,10 @@ import FormSelect from "../components/FormSelect.jsx";
 import FormAddress from "../components/FormAddress.jsx";
 import { departments} from "../data/data";
 import ReactModal  from "react-modal-mc";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addEmployee } from "../redux/employeesSlice.js";
-
+import { addEmployee } from "../reducer/employeesReducer.js";
+import logo from '../images/hrnet-logo.jpeg'
 
 export default function Form() {
   const { register, handleSubmit,  formState: { errors } ,reset } = useForm();
@@ -37,7 +37,7 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   };
   // Fonction pour fermer le modal
   const close = () => {
-    setModalIsOpen(false); // Ferme le modal
+    setModalIsOpen(false); 
     reset();
     setSelectedDepartment(null); 
     setSelectedState(null);
@@ -46,13 +46,15 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   };
   return (
     <div>
+      <div className="container">
+      <img src={logo} alt="logo" />
       <div className="title">
         <h1>HRnet</h1>
-      </div>
-      <div className="container">
-      <a href="/employee-list">View Current Employees</a>
-        <h2>Create Employee</h2>
+        </div>
+      <Link className="Link patch" to="/employee-list">View Current Employees</Link>
+        </div>
         <form onSubmit={handleSubmit(onSubmit)}>
+        <h2>Create Employee</h2>
           <FormInput 
             id="firstName" 
             label="First Name" 
@@ -104,8 +106,6 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
             <button type="submit">Save</button>
           </div>
         </form>
-      </div>
- 
 <ReactModal 
       isOpen={modalIsOpen}
       onClose={() => close()}

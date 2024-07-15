@@ -34,6 +34,7 @@ const FormAddress = ({ register, errors, selectedState, setSelectedState, formEr
       <FormInput 
         id="zipCode" 
         label="Zip Code" 
+        type="number"
         register={register} 
         error={errors.zipCode}
         requiredMessage="Zip Code is required"
