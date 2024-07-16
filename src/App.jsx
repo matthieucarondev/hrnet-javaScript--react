@@ -7,13 +7,13 @@ import Header from "./components/Header";
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
-        <Routes>
+      <Routes>
+        <div className="App">
+          <Header />
           <Route path="/" element={<Form />} />
           <Route path="employee-list" element={<EmployeeList />} />
-        </Routes>
-      </div>
+        </div>
+      </Routes>
     </Router>
   );
 }
