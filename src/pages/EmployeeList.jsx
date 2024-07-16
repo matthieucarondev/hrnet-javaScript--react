@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import Header from "./components/Header";
 
 
 const EmployeeList = () => {
@@ -86,6 +87,7 @@ const EmployeeList = () => {
 
   return (
     <div>
+      <Header/>
       <div className="employee-list"> 
          <h2>Current Employees</h2>
         <div>

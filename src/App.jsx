@@ -8,11 +8,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <div className="App">
-          <Header />
-          <Route path="/" element={<Form />} />
-          <Route path="employee-list" element={<EmployeeList />} />
-        </div>
+       
+        <Route path="/" element={<Form />} />
+        <Route path="employee-list" element={<EmployeeList />} />
       </Routes>
     </Router>
   );
