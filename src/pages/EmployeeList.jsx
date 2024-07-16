@@ -86,7 +86,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div>
+    <div className="App">
       <Header/>
       <div className="employee-list"> 
          <h2>Current Employees</h2>

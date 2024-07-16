@@ -46,7 +46,7 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
     navigate('/employee-list');
   };
   return (
-    <div>
+    <div className="App">
        <Header />
         <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Create Employee</h2>
