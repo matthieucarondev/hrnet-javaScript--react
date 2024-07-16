@@ -8,7 +8,7 @@ import Root from './components/Root';
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-    <Route path="/" element={<Root />}>
+    <Route path="" element={<Root />}>
         < Route index element={<Form />} />
         <Route path='/employee-list' element={<EmployeeList />} />
        </Route>
