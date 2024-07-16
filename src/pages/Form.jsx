@@ -8,7 +8,7 @@ import ReactModal  from "react-modal-mc";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../reducer/employeesReducer.js";
-import Header from "./components/Header";
+import Header from "../components/Header";
 
 
 export default function Form() {
