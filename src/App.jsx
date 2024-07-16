@@ -8,8 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-       
-        <Route path="/" element={<Form />} />
+        <Route index element={<Form />} />
         <Route path="employee-list" element={<EmployeeList />} />
       </Routes>
     </Router>
