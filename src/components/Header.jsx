@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../images/hrnet-logo.jpeg'; // Assurez-vous de remplacer par le chemin réel de votre logo
+import logo from '../images/hrnet-logo.jpeg'; 
 
 const Header = () => {
   const location = useLocation();

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormInput from './FormImput';
+import FormInput from './FormInput';
 import FormSelect from './FormSelect';
 import { states } from '../data/data';
 

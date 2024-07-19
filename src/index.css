@@ -137,6 +137,7 @@ input:disabled {
 input[type="button"]:hover {
   transition: 0.3s all;
 }
+
 .App {
   max-width: 100%;
   margin: 0 auto;
@@ -191,7 +192,7 @@ span {
 /* EmployeeList */
 
 
-.fonction {
+.table-options {
   display: flex;
   justify-content: space-between;
 
@@ -209,10 +210,6 @@ span {
   }
 }
 
-.fonctionSearch {
-  display: flex;
-  flex-direction: row-reverse;
-}
 
 .search-bar {
   display: flex;
@@ -308,4 +305,3 @@ span {
     }
   }
 }
-

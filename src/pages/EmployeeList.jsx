@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import Pagination from "../components/pagination";
 
 
 const EmployeeList = () => {
@@ -85,12 +86,14 @@ const EmployeeList = () => {
   };
 
   return (
-    <div>
+    
       <div className="employee-list"> 
          <h2>Current Employees</h2>
-        <div>
-          {employees.length > 5 ?(
-          <div className="fonction">
+         {employees.length > 0 && 
+         <section>
+        <div className="table-options">
+          {employees.length > 5  &&
+         
             <div className="options">
               <label htmlFor="employeesPerPage">
                 show
@@ -107,8 +110,9 @@ const EmployeeList = () => {
                 entries
               </label>
             </div>
-
-            <div className="search-bar ">
+          
+            } 
+              <div className="search-bar ">
               <label htmlFor="search">Search:</label>
               <input
                 id="search"
@@ -118,21 +122,6 @@ const EmployeeList = () => {
                 placeholder="Search by first name or last name"
               />
             </div>
-          </div>
-          ):(
-          <div className="fonctionSearch">
-            <div className="search-bar ">
-              <label htmlFor="search">Search:</label>
-              <input
-                id="search"
-                type="text"
-                value={searchTerm}
-                onChange={handleSearchChange}
-                placeholder="Search by first name or last name"
-              />
-            </div>
-          </div>
-          )}
         </div>
         <table>
           <thead>
@@ -211,37 +200,19 @@ const EmployeeList = () => {
         </table>
         <div>
           {totalPages > 1 && (
-            <div className="pagination">
-              <button
-                onClick={(event) => handlePageChange(event, currentPage - 1)}
-                disabled={currentPage === 1}
-                className="pagination-button "
-              >
-                Previous
-              </button>
-              {Array.from({ length: totalPages }, (_, index) => (
-                <button
-                  key={index + 1}
-                  onClick={(event) => handlePageChange(event, index + 1)}
-                  className={
-                    currentPage === index + 1 ? "active" : "pagination-button"
-                  }
-                >
-                  {index + 1}
-                </button>
-              ))}
-              <button
-                onClick={(event) => handlePageChange(event, currentPage + 1)}
-                disabled={currentPage === totalPages}
-                className="pagination-button "
-              >
-                Next
-              </button>
-            </div>
+          <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          handlePageChange={handlePageChange}
+          />          
           )}
         </div>
+        </section>}
+        {
+          employees.length === 0 && 
+          <span>No employee is recorded </span>
+        }
       </div>
-    </div>
   );
 };
 

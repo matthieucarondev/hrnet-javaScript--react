@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import FormInput from "../components/FormImput.jsx";
+import FormInput from "../components/FormInput.jsx";
 import FormSelect from "../components/FormSelect.jsx";
 import FormAddress from "../components/FormAddress.jsx";
-import { departments} from "../data/data";
+import { departments} from "../data/data.js";
 import ReactModal  from "react-modal-mc";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../reducer/employeesReducer.js";
 
 
-export default function Form() {
+export default function EmployeeCreate() {
   const { register, handleSubmit,  formState: { errors } ,reset } = useForm();
 const [selectedDepartment, setSelectedDepartment] = React.useState(null);
   const [selectedState, setSelectedState] = React.useState(null);

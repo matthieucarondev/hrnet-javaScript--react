@@ -15,8 +15,7 @@ const employeesSlice = createSlice({
   },
 });
 
-// Exportez les actions
+
 export const { addEmployee } = employeesSlice.actions;
 
-// Exportez le réducteur par défaut
 export default employeesSlice.reducer;
