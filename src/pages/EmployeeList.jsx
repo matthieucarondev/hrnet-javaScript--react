@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Pagination from "../components/pagination";
+import EmployeeTable from "../components/EmployeeTable";
+import TableOptions from "../components/TableOptions";
+
 
 
 
@@ -94,113 +97,19 @@ const EmployeeList = () => {
          <h2>Current Employees</h2>
          {employees.length > 0 && 
          <section>
-        <div className="table-options">
-          {employees.length > 5  &&
-         
-            <div className="options">
-              <label htmlFor="employeesPerPage">
-                show
-                <select
-                  id="employeesPerPage"
-                  value={employeesPerPage}
-                  onChange={handleEmployeesPerPageChange}
-                >
-                  <option value={5}>5</option>
-                  <option value={10}>10</option>
-                  <option value={15}>15</option>
-                  <option value={20}>20</option>
-                </select>
-                entries
-              </label>
-            </div>
-          
-            } 
-              <div className="search-bar ">
-              <label htmlFor="search">Search:</label>
-              <input
-                id="search"
-                type="text"
-                value={searchTerm}
-                onChange={handleSearchChange}
-                placeholder="Search by first name or last name"
-              />
-            </div>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th
-                onClick={() => handleSort("firstName")}
-                className={getSortClass("firstName")}
-              >
-                First Name
-              </th>
-              <th
-                onClick={() => handleSort("lastName")}
-                className={getSortClass("lastName")}
-              >
-                Last Name
-              </th>
-              <th
-                onClick={() => handleSort("startDate")}
-                className={getSortClass("startDate")}
-              >
-                Start Date
-              </th>
-              <th
-                onClick={() => handleSort("department")}
-                className={getSortClass("department")}
-              >
-                Department
-              </th>
-              <th
-                onClick={() => handleSort("dateOfBirth")}
-                className={getSortClass("dateOfBirth")}
-              >
-                Date of Birth
-              </th>
-              <th
-                onClick={() => handleSort("street")}
-                className={getSortClass("street")}
-              >
-                Street
-              </th>
-              <th
-                onClick={() => handleSort("city")}
-                className={getSortClass("city")}
-              >
-                City
-              </th>
-              <th
-                onClick={() => handleSort("state")}
-                className={getSortClass("state")}
-              >
-                State
-              </th>
-              <th
-                onClick={() => handleSort("zipCode")}
-                className={getSortClass("zipCode")}
-              >
-                Zip Code
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {currentEmployees.map((employee, index) => (
-              <tr key={index}>
-                <td className="FirstName">{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.startDate}</td>
-                <td>{employee.department}</td>
-                <td>{employee.dateOfBirth}</td>
-                <td>{employee.street}</td>
-                <td>{employee.city}</td>
-                <td>{employee.state}</td>
-                <td>{employee.zipCode}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+       <TableOptions
+        employeesPerPage={employeesPerPage}
+        handleEmployeesPerPageChange={handleEmployeesPerPageChange}
+        searchTerm={searchTerm}
+        handleSearchChange={handleSearchChange}
+        totalEmployees={employees.length}
+      />
+       <EmployeeTable 
+         employees={employees}
+         handleSort={handleSort}
+         getSortClass={getSortClass}
+         currentEmployees={currentEmployees}
+         />
         <div>
           {totalPages > 1 && (
           <Pagination
