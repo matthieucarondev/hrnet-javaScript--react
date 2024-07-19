@@ -3,6 +3,9 @@ import { useSelector } from "react-redux";
 import Pagination from "../components/pagination";
 
 
+
+
+
 const EmployeeList = () => {
   const employees = useSelector((state) => state.employees.employees);
   const [employeesPerPage, setEmployeesPerPage] = useState(5);
@@ -86,7 +89,7 @@ const EmployeeList = () => {
   };
 
   return (
-    
+
       <div className="employee-list"> 
          <h2>Current Employees</h2>
          {employees.length > 0 && 

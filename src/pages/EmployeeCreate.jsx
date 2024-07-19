@@ -8,6 +8,7 @@ import ReactModal  from "react-modal-mc";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../reducer/employeesReducer.js";
+import Header from "../components/Header";
 
 
 export default function EmployeeCreate() {
@@ -45,7 +46,8 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
     navigate('/employee-list');
   };
   return (
-    <div>
+    <div className="App">
+       <Header />
         <form onSubmit={handleSubmit(onSubmit)}>
         <h2>Create Employee</h2>
           <FormInput 
