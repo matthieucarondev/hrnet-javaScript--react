@@ -14,24 +14,41 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  .logo {
+    width: 20%;
+    height: 10%;
+  }
 }
-
+.margin{margin-right: 39px;
+}
 h1 {
-  font-weight: 100;
+  
   color: #73852B;
   font-weight: 900;
   text-align: center;
   padding-bottom: 10px;
   width: 350px;
-  margin-left: 50px;
+ 
 
 }
 
 .Link {
+  font-size: 20px;
+  font-weight: 900;
   text-decoration: none;
-  color: #0e101c;
+  color: #73852B;
+  padding:38px;
 }
 
+.Link.active {
+  text-decoration: underline;
+}
+
+/* Style de survol pour les liens non actifs */
+.Link:not(.active):hover {
+  color: #5E6E21; /* Couleur de survol pour les liens non actifs */
+  text-decoration: underline;
+}
 .patch {
   background-color: #73852B;
   width: 250px;
@@ -39,7 +56,6 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 4px solid #4a5323;
   border-radius: 50px;
 }
 
@@ -97,10 +113,9 @@ label {
 
 button[type="submit"],
 input[type="submit"] {
-  background: #86963f;
+  background: #a4c130;
   color: white;
   text-transform: uppercase;
-  border: 3px solid #a4c130;
   margin-top: 40px;
   padding: 20px;
   font-size: 16px;

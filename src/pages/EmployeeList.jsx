@@ -1,13 +1,6 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
-import Pagination from "../components/pagination";
-import EmployeeTable from "../components/EmployeeTable";
-import TableOptions from "../components/TableOptions";
-
-
-
-
-
+import Table from "../components/Table";
 
 const EmployeeList = () => {
   const employees = useSelector((state) => state.employees.employees);
@@ -92,39 +85,26 @@ const EmployeeList = () => {
   };
 
   return (
-
-      <div className="employee-list"> 
-         <h2>Current Employees</h2>
-         {employees.length > 0 && 
-         <section>
-       <TableOptions
-        employeesPerPage={employeesPerPage}
-        handleEmployeesPerPageChange={handleEmployeesPerPageChange}
-        searchTerm={searchTerm}
-        handleSearchChange={handleSearchChange}
-        totalEmployees={employees.length}
-      />
-       <EmployeeTable 
-         employees={employees}
-         handleSort={handleSort}
-         getSortClass={getSortClass}
-         currentEmployees={currentEmployees}
-         />
-        <div>
-          {totalPages > 1 && (
-          <Pagination
+    <div className="employee-list">
+      <h2>Current Employees</h2>
+      {employees.length > 0 && (
+        <Table
+          employeesPerPage={employeesPerPage}
+          handleEmployeesPerPageChange={handleEmployeesPerPageChange}
+          searchTerm={searchTerm}
+          handleSearchChange={handleSearchChange}
+          totalEmployees={employees.length}
+          employees={employees}
+          handleSort={handleSort}
+          getSortClass={getSortClass}
+          currentEmployees={currentEmployees}
           currentPage={currentPage}
           totalPages={totalPages}
           handlePageChange={handlePageChange}
-          />          
-          )}
-        </div>
-        </section>}
-        {
-          employees.length === 0 && 
-          <span>No employee is recorded </span>
-        }
-      </div>
+        />
+      )}
+      {employees.length === 0 && <span>No employee is recorded </span>}
+    </div>
   );
 };
 

@@ -6,16 +6,15 @@ const Header = () => {
   const location = useLocation();
   
   return (
-    <div className="container">
-      <img src={logo} alt="logo" />
+    <div className={`container ${location.pathname === '/employee-list' ? 'margin' : ''}`}>
+      <img className="logo" src={logo} alt="logo" />
       <div className="title">
         <h1>HRnet</h1>
       </div>
-      {location.pathname === '/' ? (
-        <Link className="Link patch" to="/employee-list">View Current Employees</Link>
-      ) : (
-        <Link className="Link patch" to="/">View Create Employee</Link>
-      )}
+      <nav>
+        <Link className={`Link  ${location.pathname === '/' ? 'active' : ''}`} to="/">Home</Link>
+        <Link className={`Link  ${location.pathname === '/employee-list' ? 'active' : ''}`} to="/employee-list">Employees</Link>
+      </nav>
     </div>
   );
 };
