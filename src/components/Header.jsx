@@ -6,7 +6,7 @@ const Header = () => {
   const location = useLocation();
   
   return (
-    <div className={`container ${location.pathname === '/employee-list' ? 'margin' : ''}`}>
+    <div className="container ">
       <img className="logo" src={logo} alt="logo" />
       <div className="title">
         <h1>HRnet</h1>

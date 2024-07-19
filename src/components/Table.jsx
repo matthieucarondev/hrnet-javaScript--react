@@ -16,7 +16,7 @@ const Table = ({employeesPerPage,
     totalPages,
     handlePageChange}) => {
     return (
-        <section>
+        <section className='Table'>
         <TableOptions
          employeesPerPage={employeesPerPage}
          handleEmployeesPerPageChange={handleEmployeesPerPageChange}

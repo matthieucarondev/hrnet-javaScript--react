@@ -14,21 +14,23 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+
   .logo {
     width: 20%;
     height: 10%;
   }
 }
-.margin{margin-right: 39px;
-}
+
+
+
 h1 {
-  
+
   color: #73852B;
   font-weight: 900;
   text-align: center;
   padding-bottom: 10px;
   width: 350px;
- 
+
 
 }
 
@@ -37,7 +39,7 @@ h1 {
   font-weight: 900;
   text-decoration: none;
   color: #73852B;
-  padding:38px;
+  padding: 38px;
 }
 
 .Link.active {
@@ -46,9 +48,11 @@ h1 {
 
 /* Style de survol pour les liens non actifs */
 .Link:not(.active):hover {
-  color: #5E6E21; /* Couleur de survol pour les liens non actifs */
+  color: #5E6E21;
+  /* Couleur de survol pour les liens non actifs */
   text-decoration: underline;
 }
+
 .patch {
   background-color: #73852B;
   width: 250px;
@@ -236,8 +240,8 @@ span {
 
   input {
     height: 40px;
-    background-color: #bfdf3e;
     border-radius: 30px;
+    width: 242px;
   }
 }
 
@@ -251,7 +255,9 @@ span {
     text-align: center;
 
   }
-
+.Table{
+  margin: 40px;
+}
   table {
     display: flex;
     flex-direction: column;
@@ -318,5 +324,13 @@ span {
     button:hover {
       background-color: #5E6E21;
     }
+  }
+
+  .NoEmployees {
+    color: #0e101c;
+    font-size: 56px;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
   }
 }
