@@ -108,6 +108,7 @@ const [selectedDepartment, setSelectedDepartment] = React.useState(null);
       title="Employee Created!"
       modalBackground="white"
       closeButtonBackground="#5E6E21"
+      closeButtonHoverBackground=" #a4c130"
       >
       </ReactModal>
    </section>
