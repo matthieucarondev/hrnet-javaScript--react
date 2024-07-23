@@ -3,17 +3,18 @@ import Select from 'react-select';
 
 const FormSelect = ({ id, label, options, value, onChange, error, requiredMessage }) => {
   return (
-    <div>
-      <label htmlFor={id}>{label}</label>
+    <article>
+      <label id={`${id}-label`} htmlFor={id}>{label}</label>
       <Select
         id={id}
         name={id}
+        aria-labelledby={`${id}-label`}
         options={options}
         value={value}
         onChange={onChange}
       />
       {error && <span>{requiredMessage}</span>}
-    </div>
+    </article>
   );
 };
 

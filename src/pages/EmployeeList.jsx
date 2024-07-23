@@ -85,7 +85,7 @@ const EmployeeList = () => {
   };
 
   return (
-    <div className="employee-list">
+    <section className="employee-list">
       <h2>Current Employees</h2>
       {employees.length > 0 && (
         <Table
@@ -104,7 +104,7 @@ const EmployeeList = () => {
         />
       )}
       {employees.length === 0 && <span className="NoEmployees">No employee is recorded </span>}
-    </div>
+    </section>
   );
 };
 

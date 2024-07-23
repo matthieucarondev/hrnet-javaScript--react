@@ -5,9 +5,8 @@ import { states } from '../data/data';
 
 const FormAddress = ({ register, errors, selectedState, setSelectedState, formErrors, setFormErrors }) => {
   return (
-    <div className="address">
-      <div className="title-address">Address</div>
-
+    <section className="address">
+      <h3 className="title-address">Address</h3>
       <FormInput 
         id="street" 
         label="Street" 
@@ -39,7 +38,7 @@ const FormAddress = ({ register, errors, selectedState, setSelectedState, formEr
         error={errors.zipCode}
         requiredMessage="Zip Code is required"
       />
-    </div>
+    </section>
   );
 };
 
