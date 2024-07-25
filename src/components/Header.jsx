@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../images/android-chrome-192x192.png'; 
+import "../css/Header.css";
+
 
 const Header = () => {
   const location = useLocation();

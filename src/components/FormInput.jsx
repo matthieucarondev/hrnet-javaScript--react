@@ -1,4 +1,5 @@
 import React from 'react';
+import "../css/Form.css";
 
 const FormInput = ({ id, label, register, error, type = 'text', requiredMessage }) => {
   return (

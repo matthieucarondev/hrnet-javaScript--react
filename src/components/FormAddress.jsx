@@ -2,6 +2,7 @@ import React from 'react';
 import FormInput from './FormInput';
 import FormSelect from './FormSelect';
 import { states } from '../data/data';
+import "../css/Form.css";
 
 const FormAddress = ({ register, errors, selectedState, setSelectedState, formErrors, setFormErrors }) => {
   return (

@@ -2,6 +2,7 @@ import React from "react";
 import TableOptions from "./TableOptions";
 import EmployeeTable from "./EmployeeTable";
 import Pagination from "./pagination";
+import '../css/Table.css';
 
 const Table = ({
   employeesPerPage,

@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  
+  
+  }
+    .logo {
+      display: block;
+      width: 192px;   
+      height: 192px;  
+      object-fit: cover;
+    }
+  .title{
+    margin-left: 127px;
+  }
+  
