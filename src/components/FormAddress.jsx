@@ -4,7 +4,7 @@ import FormSelect from './FormSelect';
 import { states } from '../data/data';
 import "../css/Form.css";
 
-const FormAddress = ({ register, errors, selectedState, setSelectedState, formErrors, setFormErrors }) => {
+const FormAddress = ({ register, errors, selectedState, setSelectedState, formErrors, setFormErrors  }) => {
   return (
     <section className="address">
       <h3 className="title-address">Address</h3>
@@ -22,7 +22,7 @@ const FormAddress = ({ register, errors, selectedState, setSelectedState, formEr
         error={errors.city}
         requiredMessage="City is required"
       />
-      <FormSelect 
+        <FormSelect 
         id="state" 
         label="State" 
         options={states} 

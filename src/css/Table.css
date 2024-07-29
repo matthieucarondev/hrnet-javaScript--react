@@ -119,11 +119,11 @@
       }
     }
   
-    .NoEmployees {
-      color: #0e101c;
-      font-size: 56px;
-      display: flex;
-      justify-content: center;
-      margin-top: 100px;
+    .no-employees {
+      color: #0e101c !important;
+      font-size: 36px  !important;
+      display: flex!important;
+      justify-content: center!important;
+      margin-top: 100px!important;
     }
   }  

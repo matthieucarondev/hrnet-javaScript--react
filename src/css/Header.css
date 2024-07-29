@@ -15,4 +15,28 @@
   .title{
     margin-left: 127px;
   }
+  h1 {
+
+    color: #73852B;
+    font-weight: 900;
+    text-align: center;
+    padding-bottom: 10px;
+    width: 350px;
+  }
+  .Link {
+    font-size: 20px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #73852B;
+    padding: 38px;
+  }
   
+  .Link.active {
+    text-decoration: underline;
+  }
+  
+  
+  .Link:not(.active):hover {
+    color: #5E6E21;
+    text-decoration: underline;
+  }

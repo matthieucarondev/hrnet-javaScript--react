@@ -103,7 +103,7 @@ const EmployeeList = () => {
           handlePageChange={handlePageChange}
         />
       )}
-      {employees.length === 0 && <span className="NoEmployees">No employee is recorded </span>}
+      {employees.length === 0 && <span className="no-employees">No employee is recorded </span>}
     </section>
   );
 };

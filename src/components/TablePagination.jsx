@@ -1,6 +1,6 @@
 import React from "react";
 
-const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
+const TablePagination = ({ currentPage, totalPages, handlePageChange }) => {
   return (
     <nav aria-label="Page navigation">
       <ul className="pagination">
@@ -39,4 +39,4 @@ const Pagination = ({ currentPage, totalPages, handlePageChange }) => {
   );
 };
 
-export default Pagination;
+export default TablePagination;

@@ -1,7 +1,7 @@
 import React from "react";
 import TableOptions from "./TableOptions";
 import EmployeeTable from "./EmployeeTable";
-import Pagination from "./pagination";
+import TablePagination from "./TablePagination";
 import '../css/Table.css';
 
 const Table = ({
@@ -9,7 +9,7 @@ const Table = ({
   handleEmployeesPerPageChange,
   searchTerm,
   handleSearchChange,
-  totalEmployees,
+  // totalEmployees,
   employees,
   handleSort,
   getSortClass,
@@ -36,7 +36,7 @@ const Table = ({
       
         {totalPages > 1 && (
           <nav className='pagination-nav'>
-          <Pagination
+          <TablePagination
             currentPage={currentPage}
             totalPages={totalPages}
             handlePageChange={handlePageChange}
