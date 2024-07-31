@@ -65,10 +65,12 @@ fieldset{
   .react-select__option--is-selected {
     background-color: #f0f0f0;
   }
-  span {
+  fieldset{ 
+    span {
     color: red !important;
     font-size: 12px !important;
-  } 
+  } }
+ 
   button[type="submit"],
   input[type="submit"] {
     background: #a4c130;
