@@ -19,7 +19,7 @@ const Table = ({
   handlePageChange,
 }) => {
   return (
-    <section className="Table">
+    <section className="table">
       <TableOptions
         employeesPerPage={employeesPerPage}
         handleEmployeesPerPageChange={handleEmployeesPerPageChange}

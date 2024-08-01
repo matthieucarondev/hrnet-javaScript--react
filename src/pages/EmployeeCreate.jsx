@@ -9,7 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addEmployee } from "../reducer/employeesReducer.js";
 
-
 export default function EmployeeCreate() {
   const {
     register,
@@ -22,19 +21,19 @@ export default function EmployeeCreate() {
   const [formErrors, setFormErrors] = useState({
     state: false,
     department: false,
-   });
+  });
   const [modalIsOpen, setModalIsOpen] = useState(false); // État pour contrôler l'affichage du modal
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-     if (!selectedState || !selectedDepartment) {
-       setFormErrors({
+    if (!selectedState || !selectedDepartment) {
+      setFormErrors({
         state: !selectedState,
         department: !selectedDepartment,
-       });
+      });
       return;
-     }
+    }
 
     data.state = selectedState.value;
     data.department = selectedDepartment.value;
@@ -85,7 +84,7 @@ export default function EmployeeCreate() {
           error={errors.startDate}
           requiredMessage="Start Date is required"
         />
-            <FormAddress
+        <FormAddress
           register={register}
           errors={errors}
           selectedState={selectedState}
@@ -93,7 +92,7 @@ export default function EmployeeCreate() {
           formErrors={formErrors}
           setFormErrors={setFormErrors}
         />
-                    <FormSelect
+        <FormSelect
           id="department"
           label="Department"
           options={departments}

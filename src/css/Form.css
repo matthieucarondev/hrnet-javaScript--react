@@ -33,6 +33,10 @@ fieldset{
     color: black;
     font-size: 14px;
     font-weight: 200;
+   
+  }
+  label .star {
+    color: #a4c130;
   }
   .address {
     border: 3px solid #859b2d;
@@ -65,11 +69,10 @@ fieldset{
   .react-select__option--is-selected {
     background-color: #f0f0f0;
   }
-  fieldset{ 
-    span {
-    color: red !important;
-    font-size: 12px !important;
-  } }
+  .error-msg {
+    color: red ;
+    font-size: 12px ;
+  } 
  
   button[type="submit"],
   input[type="submit"] {

@@ -5,7 +5,7 @@ import "../css/Form.css";
 const FormSelect = ({ id, label, options, value, onChange, error, requiredMessage }) => {
   return (
     < fieldset>
-      <label htmlFor={id}>{label}</label>
+      <label htmlFor={id}>{label}<span className='star'>*</span></label>
       <Select
         id={id}
         name={id}
@@ -13,7 +13,7 @@ const FormSelect = ({ id, label, options, value, onChange, error, requiredMessag
         value={value}
         onChange={onChange}
       />
-      {error && <span>{requiredMessage}</span>}
+      {error && <span className='error-msg' >{requiredMessage}</span>}
     </ fieldset>
   );
 };

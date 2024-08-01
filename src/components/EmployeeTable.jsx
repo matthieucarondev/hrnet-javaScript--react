@@ -67,7 +67,7 @@ const EmployeeTable = ({  employees,
         <tbody>
           {currentEmployees.map((employee, index) => (
             <tr key={index}>
-              <td className="FirstName">{employee.firstName}</td>
+              <td className="first-name">{employee.firstName}</td>
               <td>{employee.lastName}</td>
               <td>{employee.startDate}</td>
               <td>{employee.department}</td>

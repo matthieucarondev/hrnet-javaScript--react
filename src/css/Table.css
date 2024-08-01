@@ -1,129 +1,135 @@
 .table-options {
-    display: flex;
-    justify-content: space-between;
-  
-    .options {
-      border: none;
-    }
-  
-    .options label {
-      display: flex;
-      align-items: baseline;
-  
-      select {
-        margin-left: 10px;
-        margin-right: 10px;
-        background-color: #bfdf3e;
-        border-radius: 30px;
-        height: 40px;
-      }
-    }
-  }
-  legend {
-    display: none;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: baseline;
-  
-    label {
-      margin-right: 20px;
-    }
-  
-    input {
-      height: 40px;
-      border-radius: 30px;
-      width: 242px;
-    }
-  }
-  .employee-list {
-    padding: 20px;
-    max-width: 1187px;
-    margin: 0 auto;
-  
-    h2 {
-      margin-bottom: 20px;
-      text-align: center;
-  
-    }
-  .Table{
-    margin: 40px;
-  }
-    table {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-width: 100%;
-      border-collapse: collapse;
-    }
-  
-    td {
-  
-      text-align: center;
-      min-width: 78px;
-      background-color: #f1f1f1;
-      padding-right: 20px;
-    }
-  
-    th {
-      cursor: pointer;
-      background-position: right;
-      background-repeat: no-repeat;
-      padding-right: 20px;
-      text-align: center;
-      min-width: 78px;
-    }
-  
-    th.sortable {
-      background-image: url(../images/sort-icon.png);
-    }
-  
-    th.sortable.asc {
-      background-image: url(../images/sort-asc.png);
-      background-size: 10px 10px;
-    }
-  
-    th.sortable.desc {
-      background-image: url(../images/sort-desc.png);
-      background-size: 10px 10px;
-    }
-  
-  
-    .FirstName {
-      background-color: #ddd;
-    }
-  
-    .pagination {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      list-style-type: none;
-  
-      button {
-        margin: 0 15px;
-        padding: 5px 10px;
-        height: 40px;
-        background-color: #bfdf3e;
-        border-radius: 30px;
-        cursor: pointer;
-      }
-  
-      button.active {
-        background-color: #5E6E21;
-        color: #fff;
-      }
-  
-      button:hover {
-        background-color: #5E6E21;
-      }
-    }
-  
-    .no-employees {
-      color: #0e101c !important;
-      font-size: 36px  !important;
-      display: flex!important;
-      justify-content: center!important;
-      margin-top: 100px!important;
-    }
-  }  
+  display: flex;
+  justify-content: space-between;
+}
+
+.options {
+  border: none;
+}
+
+.options label {
+  display: flex;
+  align-items: baseline;
+}
+
+.options label select {
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #bfdf3e;
+  border-radius: 30px;
+  height: 40px;
+}
+
+legend {
+  display: none;
+}
+
+.search-bar {
+  display: flex;
+  align-items: baseline;
+}
+
+.search-bar label {
+  margin-right: 20px;
+}
+
+.search-bar input {
+  height: 40px;
+  border-radius: 30px;
+  width: 242px;
+}
+
+.employee-list {
+  padding: 20px;
+  max-width: 1187px;
+  margin: 0 auto;
+
+}
+
+.employee-list h2 {
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+.table {
+  margin: 40px;
+}
+
+table {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+
+  width: 161px;
+
+  background-color: #f1f1f1;
+  padding-right: 20px;
+}
+
+th {
+  cursor: pointer;
+  background-position: right;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  text-align: center;
+  width: 102px;
+  margin-right: 10px;
+}
+
+th.sortable {
+  background-image: url(../images/sort-icon.png);
+}
+
+th.sortable.asc {
+  background-image: url(../images/sort-asc.png);
+  background-size: 10px 10px;
+}
+
+th.sortable.desc {
+  background-image: url(../images/sort-desc.png);
+  background-size: 10px 10px;
+}
+
+
+.first-name {
+  background-color: #ddd;
+}
+
+.no-employees {
+  color: #0e101c;
+  font-size: 36px;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  list-style-type: none;
+}
+
+.pagination button {
+  margin: 0 15px;
+  padding: 5px 10px;
+  height: 40px;
+  background-color: #bfdf3e;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #5E6E21;
+  color: #fff;
+}
+
+.pagination button:hover {
+  background-color: #5E6E21;
+}
