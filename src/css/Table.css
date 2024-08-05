@@ -133,3 +133,26 @@ th.sortable.desc {
 .pagination button:hover {
   background-color: #5E6E21;
 }
+
+@media (max-width: 966px){
+  .table {
+    margin: 0;
+  }
+  .table-options{
+    flex-direction: column;
+    align-items: center;
+  }
+  .options {
+    width: 170px;
+  }
+  .options label select {
+    margin-left: 10px;
+    margin-right: 9px;
+  }
+  th{
+    padding-right: 25px;
+  }
+
+}
+
+

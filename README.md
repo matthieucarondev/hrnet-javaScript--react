@@ -14,6 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+#### insert dummy datas
+
+Import `addExampleEmployees` in your index.js:
+
+```js
+import './reducer/addExampleEmployees.js';
+```	
+This script serves as a way to populate the Redux store with a set of example employee data, which could be useful for testing or demonstration purposes.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
